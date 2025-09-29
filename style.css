@@ -1,0 +1,199 @@
+/* Import classic serif fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Merriweather&display=swap');
+
+body {
+  font-family: 'Lora', serif;
+  margin: 0;
+  background: #f5f7fa;
+  color: #333;
+  text-align: justify; /* Justify all body text */
+}
+
+/* Welcome Section Background */
+.welcome-section {
+  text-align: center;
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #90caf9 0%, #1976d2 100%);
+  color: #fff;
+}
+
+/* Circular avatar with 3D outline */
+.avatar-wrap {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  border: 4px solid rgba(255,255,255,0.65);
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.18),
+    inset 0 2px 6px rgba(255,255,255,0.25),
+    inset 0 -2px 8px rgba(0,0,0,0.12);
+}
+.avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;
+  display: block;
+}
+.avatar-wrap.three-d::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,0.35),
+    inset 0 8px 16px rgba(255,255,255,0.08),
+    inset 0 -8px 16px rgba(0,0,0,0.10);
+  pointer-events: none;
+}
+.avatar-wrap {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 4px solid rgba(255,255,255,0.65);
+    box-shadow:
+      0 10px 25px rgba(0,0,0,0.18),
+      inset 0 2px 6px rgba(255,255,255,0.25),
+      inset 0 -2px 8px rgba(0,0,0,0.12);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .avatar-wrap:hover {
+    border-color: #ffd166; /* change to your relatable accent color */
+    box-shadow:
+      0 10px 30px rgba(255, 209, 102, 0.7), /* subtle goldish glow */
+      inset 0 2px 6px rgba(255, 255, 210, 0.8),
+      inset 0 -2px 8px rgba(184, 148, 82, 0.5);
+    cursor: pointer;
+  }
+  
+
+/* Header and Navigation */
+header {
+  text-align: center;
+  padding: 70px 20px 40px;
+  font-family: 'Merriweather', serif;
+}
+
+header h1 {
+  font-size: 3em;
+  color: #003e6b;
+  margin: 0 0 10px 0;
+  font-family: 'Merriweather', serif;
+  text-align: center;
+}
+
+header p {
+  font-size: 1.2em;
+  color: #0077cc;
+  margin: 0;
+  font-family: 'Lora', serif;
+  text-align: justify;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 12px 0;
+  background-color: #003e6b;
+}
+
+/* Animated Buttons */
+.btn {
+  display: inline-block;
+  background-color: #0077cc;
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  position: relative;
+  text-decoration: none;
+  transition:
+    background 0.3s cubic-bezier(.4,2,.07,1),
+    box-shadow 0.3s cubic-bezier(.4,2,.07,1),
+    transform 0.2s cubic-bezier(.4,2,.07,1);
+	 box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  overflow: hidden;
+}
+
+.btn:hover, .btn:focus {
+  background-color: #005999;
+  color: #f0bf4e !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  transform: translateY(-4px) scale(1.05);
+  outline: none;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: #ffd166;
+  transition: width 0.3s cubic-bezier(.4,2,.07,1), left 0.3s cubic-bezier(.4,2,.07,1);
+}
+
+.btn:hover::after, .btn:focus::after {
+  width: 80%;
+  left: 10%;
+}
+
+.btn.btn-small {
+  padding: 6px 14px;
+  font-size: 0.9em;
+  border-radius: 4px;
+  font-weight: 500;
+  margin: 3px 0;
+  font-family: 'Lora', serif;
+}
+
+/* Sections Styling */
+section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+  font-family: 'Lora', serif;
+  text-align: justify;
+}
+
+section h2 {
+  color: #0077cc;
+  border-bottom: 3px solid #003e6b;
+  padding-bottom: 8px;
+  margin-bottom: 25px;
+  font-size: 2em;
+  font-family: 'Merriweather', serif;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 12px;
+  font-size: 1.1em;
+}
+
+/* Footer Styling */
+footer {
+  background: #003e6b;
+  text-align: center;
+  padding: 20px 10px;
+  color: #aad8ff;
+  font-size: 0.95em;
+  font-family: 'Lora', serif;
+  text-align: center;
+}

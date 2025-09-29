@@ -197,3 +197,72 @@ footer {
   font-family: 'Lora', serif;
   text-align: center;
 }
+/* Hamburger menu hidden by default outside mobile */
+.hamburger {
+  display: none;
+  font-size: 2.1rem;
+  cursor: pointer;
+  padding: 12px 18px;
+  background: transparent;
+  border: none;
+  color: #0077cc;
+}
+
+/* Hide menu toggle on larger screens */
+#menu-toggle {
+  display: none;
+}
+
+/* Default: show nav-buttons always */
+.nav-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 12px;
+  padding: 10px;
+  background-color: #003e6b;
+}
+
+/* MOBILE ONLY: hamburger for nav */
+@media (max-width: 599px) {
+  .nav-buttons {
+    display: none;
+    flex-direction: column;
+    background-color: #003e6b;
+    position: absolute;
+    top: 52px;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+  }
+  #menu-toggle:checked + .hamburger + .nav-buttons {
+    display: flex;
+    animation: menuDrop 0.25s ease;
+  }
+  .hamburger {
+    display: block;
+    position: relative;
+    z-index: 100;
+    margin: 0 auto;
+    text-align: center;
+    background: #fff;
+    border-radius: 8px;
+  }
+  nav {
+    position: relative;
+  }
+  /* Stacking buttons vertically for mobile */
+  .nav-buttons a.btn {
+    margin: 6px auto;
+    width: 90%;
+    text-align: center;
+  }
+}
+
+/* Smooth drop animation for mobile menu */
+@keyframes menuDrop {
+  from { opacity: 0; transform: translateY(-16px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
